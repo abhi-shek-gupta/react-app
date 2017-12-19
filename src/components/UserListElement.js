@@ -25,7 +25,7 @@ class UserListElement extends React.Component{
                 </a>
             </td>
             <td>
-                <Button data-id={user.id} data-userName={user.userName} onClick={this.modalDeleteShow}>
+                <Button data-id={user.id} data-username={user.userName} onClick={this.modalDeleteShow}>
                     Delete<Glyphicon glyph="remove-circle"/>
                 </Button>
             </td>
@@ -34,13 +34,13 @@ class UserListElement extends React.Component{
     }
    
     modalDeleteShow(event){
-        
+        console.log("dataset",event.target.dataset);
         const user_id = Number(event.target.dataset.id);
-        const userName = event.target.dataset.userName;
+        const username = event.target.dataset.username;
         this.props.dispatch({
              type :"users.modalDeleteShow",
              id : user_id,
-             userName : userName
+             username : username
         })
     }
 }

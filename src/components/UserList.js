@@ -38,7 +38,7 @@ class UserList extends React.Component{
 
 function mapStateToProps(state){
     return ({
-        users : state.users,
+        users : state.users.list,
     })
 }
 export default connect (mapStateToProps)(UserList);
